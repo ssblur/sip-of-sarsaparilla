@@ -1,0 +1,35 @@
+{
+	"schemaVersion": 1,
+	"id": "sip_of_sarsaparilla",
+	"version": "${version}",
+	"name": "Sip Of Sarsaparilla",
+	"description": "An uninitialized Unfocused mod",
+	"authors": [ "SSBlur" ],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/ssblur/unfocused-sip_of_sarsaparilla"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/sip_of_sarsaparilla/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"com.ssblur.sipofsarsaparilla.fabric.SipOfSarsaparillaFabric"
+		],
+		"client": [
+			"com.ssblur.sipofsarsaparilla.fabric.SipOfSarsaparillaFabric"
+		]
+	},
+	"mixins": [
+		"sip_of_sarsaparilla.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=${fabric_loader_version}",
+		"minecraft": ">=${minecraft_version}",
+		"java": ">=21",
+		"fabric-api": "*",
+		"fabric-language-kotlin": "*",
+		"unfocused": ">=${unfocused_version}"
+	},
+	"suggests": {}
+}

@@ -1,0 +1,38 @@
+modLoader = "javafml"
+loaderVersion = "[4,)"
+issueTrackerURL = "https://github.com/ssblur/unfocused-sip_of_sarsaparilla/issues"
+license = "CC0-1.0"
+
+[[mods]]
+modId = "sip_of_sarsaparilla"
+version = "${version}"
+displayName = "Sip Of Sarsaparilla"
+authors = "SSBlur"
+description = '''
+An uninitialized Unfocused mod
+'''
+logoFile = "icon.png"
+
+[[dependencies.sip_of_sarsaparilla]]
+modId = "neoforge"
+type = "required"
+versionRange = "[21.0,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.sip_of_sarsaparilla]]
+modId = "minecraft"
+type = "required"
+versionRange = "[${minecraft_version},)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.sip_of_sarsaparilla]]
+modId = "unfocused"
+type = "required"
+versionRange = "[${unfocused_version},)"
+ordering = "AFTER"
+side = "BOTH"
+
+[[mixins]]
+config = "sip_of_sarsaparilla.mixins.json"
