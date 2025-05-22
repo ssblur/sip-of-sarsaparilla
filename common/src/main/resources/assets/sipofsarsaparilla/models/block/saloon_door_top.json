@@ -1,0 +1,23 @@
+{
+	"credit": "Made with Blockbench",
+    "render_type": "translucent",
+	"texture_size": [32, 32],
+	"textures": {
+      "0": "minecraftyellow:block/saloon_door",
+      "particle": "minecraftyellow:block/saloon_door"
+	},
+	"elements": [
+		{
+			"from": [0, 0, 7],
+			"to": [16, 12, 9],
+			"faces": {
+				"north": {"uv": [0, 6, 8, 12], "texture": "#0"},
+				"east": {"uv": [8, 2, 9, 8], "texture": "#0"},
+				"south": {"uv": [8, 6, 0, 12], "texture": "#0"},
+				"west": {"uv": [9, 6, 10, 12], "texture": "#0"},
+				"up": {"uv": [16, 2, 8, 1], "texture": "#0"},
+				"down": {"uv": [16, 0, 8, 1], "texture": "#0"}
+			}
+		}
+	]
+}

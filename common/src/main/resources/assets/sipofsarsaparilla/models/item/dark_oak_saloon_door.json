@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "minecraftyellow:item/dark_oak_saloon_door"
+  }
+}

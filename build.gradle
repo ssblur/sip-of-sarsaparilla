@@ -45,6 +45,7 @@ subprojects {
     maven { url "https://mvn.blur.lol/snapshots" }
     maven { url "https://mvn.blur.lol/releases" }
     maven { url 'https://maven.blamejared.com' }
+    maven { url "https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/" }
     maven {
       name = "TerraformersMC"
       url = "https://maven.terraformersmc.com/"

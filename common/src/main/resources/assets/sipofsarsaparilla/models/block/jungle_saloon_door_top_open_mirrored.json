@@ -1,0 +1,7 @@
+{
+    "parent": "minecraftyellow:block/saloon_door_top_open_mirrored",
+    "textures": {
+        "0": "minecraftyellow:block/jungle_saloon_door",
+        "particle": "minecraftyellow:block/jungle_saloon_door"
+    }
+}

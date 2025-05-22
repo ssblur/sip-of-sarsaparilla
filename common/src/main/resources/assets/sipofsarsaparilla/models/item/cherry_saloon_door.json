@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "minecraftyellow:item/cherry_saloon_door"
+  }
+}
