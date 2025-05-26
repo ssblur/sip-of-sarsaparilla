@@ -3,8 +3,8 @@
     "render_type": "translucent",
 	"texture_size": [32, 32],
 	"textures": {
-      "0": "minecraftyellow:block/saloon_door",
-      "particle": "minecraftyellow:block/saloon_door"
+      "0": "sipofsarsaparilla:block/saloon_door",
+      "particle": "sipofsarsaparilla:block/saloon_door"
 	},
 	"elements": [
 		{

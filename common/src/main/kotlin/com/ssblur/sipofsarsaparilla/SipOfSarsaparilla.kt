@@ -1,18 +1,20 @@
 package com.ssblur.sipofsarsaparilla
 
+import com.ssblur.sipofsarsaparilla.item.SipItems
 import com.ssblur.unfocused.ModInitializer
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
 
-object SipOfSarsaparilla : ModInitializer("sip_of_sarsaparilla") {
-    const val MODID = "sip_of_sarsaparilla"
+@Suppress("unused")
+object SipOfSarsaparilla : ModInitializer("sipofsarsaparilla") {
+    const val MODID = "sipofsarsaparilla"
     val LOGGER: Logger = LoggerFactory.getLogger(id)
 
     fun init() {
-        LOGGER.info("Sip Of Sarsaparilla loaded...")
+        SipItems.register()
     }
 
     fun clientInit() {
-        LOGGER.info("Sip Of Sarsaparilla loaded...")
+        SipItems.registerClient()
     }
 }

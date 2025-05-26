@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/handheld",
   "textures": {
-    "layer0": "minecraftyellow:item/bullet"
+    "layer0": "sipofsarsaparilla:item/bullet"
   }
 }

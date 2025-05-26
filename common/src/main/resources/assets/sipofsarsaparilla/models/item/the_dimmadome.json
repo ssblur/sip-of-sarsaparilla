@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/handheld",
   "textures": {
-    "layer0": "minecraftyellow:item/the_dimmadome"
+    "layer0": "sipofsarsaparilla:item/the_dimmadome"
   }
 }

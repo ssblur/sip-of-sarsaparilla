@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/handheld",
   "textures": {
-    "layer0": "minecraftyellow:item/crimson_saloon_door"
+    "layer0": "sipofsarsaparilla:item/crimson_saloon_door"
   }
 }

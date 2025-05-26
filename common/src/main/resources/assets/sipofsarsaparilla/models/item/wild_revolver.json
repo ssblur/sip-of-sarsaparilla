@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:item/handheld",
   "textures": {
-    "layer0": "minecraftyellow:item/wild_revolver"
+    "layer0": "sipofsarsaparilla:item/wild_revolver"
   },
   "display": {
     "thirdperson_righthand": {

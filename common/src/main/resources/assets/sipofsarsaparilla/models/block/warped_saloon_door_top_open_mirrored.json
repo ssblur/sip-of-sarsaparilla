@@ -1,7 +1,7 @@
 {
-    "parent": "minecraftyellow:block/saloon_door_top_open_mirrored",
+    "parent": "sipofsarsaparilla:block/saloon_door_top_open_mirrored",
     "textures": {
-        "0": "minecraftyellow:block/warped_saloon_door",
-        "particle": "minecraftyellow:block/warped_saloon_door"
+        "0": "sipofsarsaparilla:block/warped_saloon_door",
+        "particle": "sipofsarsaparilla:block/warped_saloon_door"
     }
 }
