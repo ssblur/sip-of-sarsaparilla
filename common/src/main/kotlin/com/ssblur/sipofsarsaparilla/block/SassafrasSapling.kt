@@ -30,7 +30,7 @@ class SassafrasSapling(properties: Properties) : Block(properties.randomTicks())
     try { clientInit() } catch (_: NoSuchMethodError) {}
   }
 
-  fun clientInit() {
+  private fun clientInit() {
     this.renderType(RenderType.cutout())
   }
 
