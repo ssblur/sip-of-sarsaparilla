@@ -1,5 +1,5 @@
 {
-  "itemGroup.sipofsarsaparilla.items": "Minecraft: Yellow",
+  "itemGroup.sipofsarsaparilla.tab": "Sip of Sarsaparilla",
 
   "item.sipofsarsaparilla.toy_gun": "Toy Gun",
   "item.sipofsarsaparilla.wild_revolver": "Wild Revolver",
@@ -20,6 +20,6 @@
   "block.sipofsarsaparilla.warped_saloon_door": "Warped Saloon Door",
   "block.sipofsarsaparilla.crimson_saloon_door": "Crimson Saloon Door",
 
-  "gamerule.sipofsarsaparilla:wild_wasteland": "[Yellow] Wild Wasteland Enabled",
-  "gamerule.sipofsarsaparilla:mercy": "[Yellow] Mercy Rule Enabled"
+  "gamerule.sipofsarsaparilla:wild_wasteland": "[SoS] Wild Wasteland Enabled",
+  "gamerule.sipofsarsaparilla:mercy": "[SoS] Mercy Rule Enabled"
 }
