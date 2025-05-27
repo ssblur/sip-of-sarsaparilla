@@ -8,6 +8,7 @@
   "item.sipofsarsaparilla.bandanna": "Bandanna",
   "item.sipofsarsaparilla.cowboy_hat": "Cowboy Hat",
   "item.sipofsarsaparilla.the_dimmadome": "The Dimmadome",
+
   "item.sipofsarsaparilla.sarsaparilla": "Sarsaparilla",
 
   "block.sipofsarsaparilla.oak_saloon_door": "Oak Saloon Door",
@@ -22,6 +23,10 @@
   "block.sipofsarsaparilla.crimson_saloon_door": "Crimson Saloon Door",
   "block.sipofsarsaparilla.pale_saloon_door": "Pale Saloon Door",
   "block.sipofsarsaparilla.bamboo_saloon_door": "Bamboo Saloon Door",
+
+  "block.sipofsarsaparilla.sassafras_sapling": "Sassafras Sapling",
+  "block.sipofsarsaparilla.sassafras_log": "Sassafras Twig",
+  "block.sipofsarsaparilla.sassafras_leaves": "Sassafras Leaves",
 
   "gamerule.sipofsarsaparilla:wild_wasteland": "[SoS] Wild Wasteland Enabled",
   "gamerule.sipofsarsaparilla:mercy": "[SoS] Mercy Rule Enabled"

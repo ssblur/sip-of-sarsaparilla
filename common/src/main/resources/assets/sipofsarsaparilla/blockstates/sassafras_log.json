@@ -1,0 +1,14 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "sipofsarsaparilla:block/sassafras_log_horizontal",
+      "y": 90
+    },
+    "axis=y": {
+      "model": "sipofsarsaparilla:block/sassafras_log"
+    },
+    "axis=z": {
+      "model": "sipofsarsaparilla:block/sassafras_log_horizontal"
+    }
+  }
+}
