@@ -4,6 +4,7 @@ import com.ssblur.unfocused.extension.BlockExtension.renderType
 import net.minecraft.client.renderer.RenderType
 import net.minecraft.core.BlockPos
 import net.minecraft.server.level.ServerLevel
+import net.minecraft.tags.BlockTags
 import net.minecraft.util.RandomSource
 import net.minecraft.world.level.BlockGetter
 import net.minecraft.world.level.Level
@@ -89,25 +90,23 @@ class SassafrasSapling(properties: Properties) : Block(properties.randomTicks())
     val height = level.random.nextInt(2) + 2
     val log = SipBlocks.SASSAFRAS_LOG.first.get().defaultBlockState()
     for(i in 0..height) {
-      if(level.getBlockState(blockPos.above(i)).canBeReplaced() || i == 0)
+      if(
+        level.getBlockState(blockPos.above(i)).`is`(BlockTags.REPLACEABLE_BY_TREES)
+        || level.getBlockState(blockPos.above(i)).canBeReplaced()
+        || i == 0
+      )
         level.setBlockAndUpdate(blockPos.above(i), log)
     }
 
     val leaves = SipBlocks.SASSAFRAS_LEAVES.first.get().defaultBlockState().setValue(LeavesBlock.DISTANCE, 1)
-    var pos = blockPos.above(height + 1)
-    if(level.getBlockState(pos).canBeReplaced())
-      level.setBlockAndUpdate(pos, leaves)
-    pos = blockPos.above(height).north()
-    if(level.getBlockState(pos).canBeReplaced())
-      level.setBlockAndUpdate(pos, leaves)
-    pos = blockPos.above(height).south()
-    if(level.getBlockState(pos).canBeReplaced())
-      level.setBlockAndUpdate(pos, leaves)
-    pos = blockPos.above(height).east()
-    if(level.getBlockState(pos).canBeReplaced())
-      level.setBlockAndUpdate(pos, leaves)
-    pos = blockPos.above(height).west()
-    if(level.getBlockState(pos).canBeReplaced())
-      level.setBlockAndUpdate(pos, leaves)
+    for(pos in listOf(
+      blockPos.above(height + 1),
+      blockPos.above(height).north(),
+      blockPos.above(height).south(),
+      blockPos.above(height).east(),
+      blockPos.above(height).west())
+    )
+      if(level.getBlockState(pos).`is`(BlockTags.REPLACEABLE_BY_TREES) || level.getBlockState(pos).canBeReplaced())
+        level.setBlockAndUpdate(pos, leaves)
   }
 }
