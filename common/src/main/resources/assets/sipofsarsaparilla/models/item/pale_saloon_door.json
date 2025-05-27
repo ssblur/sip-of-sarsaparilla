@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "sipofsarsaparilla:item/pale_saloon_door"
+  }
+}

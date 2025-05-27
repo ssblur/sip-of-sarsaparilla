@@ -1,0 +1,7 @@
+{
+    "parent": "sipofsarsaparilla:block/saloon_door_top_open",
+    "textures": {
+        "0": "sipofsarsaparilla:block/pale_saloon_door",
+        "particle": "sipofsarsaparilla:block/pale_saloon_door"
+    }
+}

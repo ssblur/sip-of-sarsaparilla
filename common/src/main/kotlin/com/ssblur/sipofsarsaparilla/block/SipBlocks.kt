@@ -17,6 +17,8 @@ object SipBlocks {
   val CHERRY_SALOON_DOOR = registerBlockWithItem("cherry_saloon_door"){ SaloonDoor(ofFullCopy(Blocks.ACACIA_DOOR)) }
   val CRIMSON_SALOON_DOOR = registerBlockWithItem("crimson_saloon_door"){ SaloonDoor(ofFullCopy(Blocks.ACACIA_DOOR)) }
   val WARPED_SALOON_DOOR = registerBlockWithItem("warped_saloon_door"){ SaloonDoor(ofFullCopy(Blocks.ACACIA_DOOR)) }
+  val BAMBOO_SALOON_DOOR = registerBlockWithItem("bamboo_saloon_door"){ SaloonDoor(ofFullCopy(Blocks.ACACIA_DOOR)) }
+  val PALE_SALOON_DOOR = registerBlockWithItem("pale_saloon_door"){ SaloonDoor(ofFullCopy(Blocks.ACACIA_DOOR)) }
 
   fun register() {
     OAK_SALOON_DOOR.second.tab(SipItems.TAB)
@@ -29,6 +31,8 @@ object SipBlocks {
     CHERRY_SALOON_DOOR.second.tab(SipItems.TAB)
     CRIMSON_SALOON_DOOR.second.tab(SipItems.TAB)
     WARPED_SALOON_DOOR.second.tab(SipItems.TAB)
+    BAMBOO_SALOON_DOOR.second.tab(SipItems.TAB)
+    PALE_SALOON_DOOR.second.tab(SipItems.TAB)
   }
 
   fun registerClient() {
