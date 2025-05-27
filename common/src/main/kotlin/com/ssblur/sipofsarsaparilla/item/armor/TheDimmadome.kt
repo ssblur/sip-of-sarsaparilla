@@ -1,6 +1,6 @@
-package com.ssblur.sipofsarsaparilla.item
+package com.ssblur.sipofsarsaparilla.item.armor
 
-import com.ssblur.sipofsarsaparilla.item.model.ArmorRenderer
+import com.ssblur.sipofsarsaparilla.item.armor.model.ArmorRenderer
 import net.minecraft.client.model.HumanoidModel
 import net.minecraft.core.Holder
 import net.minecraft.world.entity.EquipmentSlot

@@ -1,8 +1,8 @@
-package com.ssblur.sipofsarsaparilla.item.model
+package com.ssblur.sipofsarsaparilla.item.armor.model
 
 import com.ssblur.sipofsarsaparilla.SipOfSarsaparilla
-import com.ssblur.sipofsarsaparilla.item.CowboyHat
 import com.ssblur.sipofsarsaparilla.item.SipItems
+import com.ssblur.sipofsarsaparilla.item.armor.CowboyHat
 import software.bernie.geckolib.cache.`object`.GeoBone
 import software.bernie.geckolib.model.DefaultedItemGeoModel
 import software.bernie.geckolib.renderer.specialty.DyeableGeoArmorRenderer

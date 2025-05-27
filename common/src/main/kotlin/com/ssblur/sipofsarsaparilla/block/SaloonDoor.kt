@@ -136,7 +136,7 @@ class SaloonDoor(properties: Properties) : TransparentBlock(properties.noOcclusi
     builder.add(HALF, FACING, SWING)
   }
 
-  fun swingTick(level: Level, pos: BlockPos, state: BlockState) {
+  private fun swingTick(level: Level, pos: BlockPos, state: BlockState) {
     val targets: MutableList<BlockPos> = ArrayList()
     targets.add(pos)
     if (state.getValue(HALF)) targets.add(pos.below())
@@ -150,8 +150,7 @@ class SaloonDoor(properties: Properties) : TransparentBlock(properties.noOcclusi
       Entity::class.java,
       AABB.encapsulatingFullBlocks(pos, pos.above())
     )) {
-      val v: Double = if (xAxis) i.deltaMovement.z
-      else i.deltaMovement.x
+      val v = if (xAxis) i.deltaMovement.z else i.deltaMovement.x
 
       if (abs(v) > 0.1 && !i.isCrouching) swing = if (v > 0) 2 else 1
 

@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "sipofsarsaparilla:item/bandanna",
+    "layer1": "sipofsarsaparilla:item/bandanna_overlay"
+  }
+}

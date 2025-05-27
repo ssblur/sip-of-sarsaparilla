@@ -2,46 +2,87 @@ package com.ssblur.sipofsarsaparilla.item
 
 import com.ssblur.sipofsarsaparilla.SipOfSarsaparilla
 import com.ssblur.sipofsarsaparilla.SipOfSarsaparilla.registerItem
+import com.ssblur.sipofsarsaparilla.item.armor.CowboyHat
+import com.ssblur.sipofsarsaparilla.item.armor.SipMaterials
+import com.ssblur.sipofsarsaparilla.item.armor.TheDimmadome
+import com.ssblur.unfocused.helper.ColorHelper
 import com.ssblur.unfocused.helper.ColorHelper.registerColor
+import com.ssblur.unfocused.tab.CreativeTabs.add
 import com.ssblur.unfocused.tab.CreativeTabs.registerCreativeTab
 import com.ssblur.unfocused.tab.CreativeTabs.tab
 import net.minecraft.core.component.DataComponents
-import net.minecraft.world.item.ArmorItem
-import net.minecraft.world.item.ArmorMaterials
-import net.minecraft.world.item.Item
-import net.minecraft.world.item.ItemStack
+import net.minecraft.world.effect.MobEffectInstance
+import net.minecraft.world.effect.MobEffects
+import net.minecraft.world.food.FoodProperties
+import net.minecraft.world.item.*
+import net.minecraft.world.item.component.DyedItemColor
 
 @Suppress("unused")
 object SipItems {
   val TAB = SipOfSarsaparilla.registerCreativeTab("sip_of_sarsaparilla", "itemGroup.sipofsarsaparilla.tab") {
-    COWBOY_HAT.get()
+    SARSAPARILLA.get()
   }
 
   val COWBOY_HAT = registerItem("cowboy_hat") {
-    CowboyHat(ArmorMaterials.LEATHER, ArmorItem.Type.HELMET, Item.Properties())
-  }
+    CowboyHat(ArmorMaterials.LEATHER, ArmorItem.Type.HELMET, Item.Properties().durability(64))
+  }.tab(TAB)
   val THE_DIMMADOME = registerItem("the_dimmadome") {
-    TheDimmadome(ArmorMaterials.LEATHER, ArmorItem.Type.HELMET, Item.Properties())
+    TheDimmadome(ArmorMaterials.LEATHER, ArmorItem.Type.HELMET, Item.Properties().durability(64))
   }.tab(TAB)
-  val BANDANA = registerItem("bandana") {
-    ArmorItem(ArmorMaterials.LEATHER, ArmorItem.Type.CHESTPLATE, Item.Properties())
+  val BANDANNA = registerItem("bandanna") {
+    ArmorItem(SipMaterials.BANDANNA, ArmorItem.Type.CHESTPLATE, Item.Properties().durability(48))
   }.tab(TAB)
+
+  val SARSAPARILLA = registerItem("sarsaparilla") {
+    object: Item(Properties()
+      .food(
+        FoodProperties
+          .Builder()
+          .alwaysEdible()
+          .usingConvertsTo(Items.GLASS_BOTTLE)
+          .nutrition(4)
+          .effect(MobEffectInstance(MobEffects.LUCK, 3000), 1.0f)
+          .build()
+      )
+    ) {
+        override fun getUseAnimation(itemStack: ItemStack): UseAnim {
+          return UseAnim.DRINK
+        }
+      }
+  }
 
   fun register() {
-    TAB.then{
-      COWBOY_HAT.tab(TAB)
-    }
-  }
+    SipMaterials.register()
 
-  fun registerClient() {
-    COWBOY_HAT.then{
-      it.registerColor{ itemStack, layer ->
-        if (layer == 1) 0xff000000.toInt().or(getColor(itemStack)) else 0xffffffffu.toInt()
+    TAB.then{
+      SARSAPARILLA.tab(TAB)
+    }
+    BANDANNA.then{
+      ColorHelper.forEachColor{
+        val item = ItemStack(BANDANNA)
+        item[DataComponents.DYED_COLOR] = DyedItemColor(it.dyeColor.textureDiffuseColor, true)
+        TAB.add(item)
       }
     }
   }
 
-  fun getColor(itemStack: ItemStack): Int {
-    return itemStack[DataComponents.DYED_COLOR]?.rgb ?: 0x3F1900
+  fun registerClient() {
+    SipMaterials.registerClient()
+
+    COWBOY_HAT.then{
+      it.registerColor{ itemStack, layer ->
+        if (layer == 1) 0xff000000.toInt().or(getColor(itemStack, 0x3F1900)) else 0xffffffffu.toInt()
+      }
+    }
+
+    BANDANNA.then{
+      it.registerColor{ itemStack, layer ->
+        if (layer == 1) 0xff000000.toInt().or(getColor(itemStack, 0x3F1900)) else 0xffffffffu.toInt()
+      }
+    }
+  }
+
+  fun getColor(itemStack: ItemStack, default: Int = 0x3F1900): Int {
+    return itemStack[DataComponents.DYED_COLOR]?.rgb ?: default
   }
 }
