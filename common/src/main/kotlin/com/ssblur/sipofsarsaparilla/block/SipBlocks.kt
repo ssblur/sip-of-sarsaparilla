@@ -90,23 +90,23 @@ object SipBlocks {
   }
 
   fun register() {
-    OAK_SALOON_DOOR.second.tab(SipItems.TAB)
-    SPRUCE_SALOON_DOOR.second.tab(SipItems.TAB)
-    BIRCH_SALOON_DOOR.second.tab(SipItems.TAB)
-    JUNGLE_SALOON_DOOR.second.tab(SipItems.TAB)
-    ACACIA_SALOON_DOOR.second.tab(SipItems.TAB)
-    DARK_OAK_SALOON_DOOR.second.tab(SipItems.TAB)
-    MANGROVE_SALOON_DOOR.second.tab(SipItems.TAB)
-    CHERRY_SALOON_DOOR.second.tab(SipItems.TAB)
-    CRIMSON_SALOON_DOOR.second.tab(SipItems.TAB)
-    WARPED_SALOON_DOOR.second.tab(SipItems.TAB)
-    BAMBOO_SALOON_DOOR.second.tab(SipItems.TAB)
-    PALE_SALOON_DOOR.second.tab(SipItems.TAB)
+    OAK_SALOON_DOOR.tab(SipItems.TAB)
+    SPRUCE_SALOON_DOOR.tab(SipItems.TAB)
+    BIRCH_SALOON_DOOR.tab(SipItems.TAB)
+    JUNGLE_SALOON_DOOR.tab(SipItems.TAB)
+    ACACIA_SALOON_DOOR.tab(SipItems.TAB)
+    DARK_OAK_SALOON_DOOR.tab(SipItems.TAB)
+    MANGROVE_SALOON_DOOR.tab(SipItems.TAB)
+    CHERRY_SALOON_DOOR.tab(SipItems.TAB)
+    CRIMSON_SALOON_DOOR.tab(SipItems.TAB)
+    WARPED_SALOON_DOOR.tab(SipItems.TAB)
+    BAMBOO_SALOON_DOOR.tab(SipItems.TAB)
+    PALE_SALOON_DOOR.tab(SipItems.TAB)
 
-    SASSAFRAS_SAPLING.second.tab(SipItems.TAB)
-    SASSAFRAS_LOG.second.tab(SipItems.TAB)
-    SASSAFRAS_LOG_BRANCHED.second.tab(SipItems.TAB)
-    SASSAFRAS_LEAVES.second.tab(SipItems.TAB)
+    SASSAFRAS_SAPLING.tab(SipItems.TAB)
+    SASSAFRAS_LOG.tab(SipItems.TAB)
+    SASSAFRAS_LOG_BRANCHED.tab(SipItems.TAB)
+    SASSAFRAS_LEAVES.tab(SipItems.TAB)
   }
 
   fun registerClient() {
