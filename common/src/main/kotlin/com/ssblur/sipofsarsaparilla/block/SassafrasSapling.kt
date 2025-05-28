@@ -1,6 +1,8 @@
 package com.ssblur.sipofsarsaparilla.block
 
 import com.ssblur.unfocused.extension.BlockExtension.renderType
+import net.fabricmc.api.EnvType
+import net.fabricmc.api.Environment
 import net.minecraft.client.renderer.RenderType
 import net.minecraft.core.BlockPos
 import net.minecraft.server.level.ServerLevel
@@ -30,6 +32,7 @@ class SassafrasSapling(properties: Properties) : Block(properties.randomTicks())
     try { clientInit() } catch (_: NoSuchMethodError) {}
   }
 
+  @Environment(EnvType.CLIENT)
   private fun clientInit() {
     this.renderType(RenderType.cutout())
   }
@@ -97,6 +100,7 @@ class SassafrasSapling(properties: Properties) : Block(properties.randomTicks())
       )
         level.setBlockAndUpdate(blockPos.above(i), log)
     }
+    level.setBlockAndUpdate(blockPos.above(height), SipBlocks.SASSAFRAS_LOG_BRANCHED.first.get().defaultBlockState())
 
     val leaves = SipBlocks.SASSAFRAS_LEAVES.first.get().defaultBlockState().setValue(LeavesBlock.DISTANCE, 1)
     for(pos in listOf(

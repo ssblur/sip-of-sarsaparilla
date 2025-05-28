@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "sipofsarsaparilla:sassafras_log"
+    "sipofsarsaparilla:sassafras_log",
+    "sipofsarsaparilla:sassafras_log_branched"
   ]
 }

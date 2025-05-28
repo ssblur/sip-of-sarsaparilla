@@ -2,10 +2,15 @@ package com.ssblur.sipofsarsaparilla.block
 
 import com.ssblur.sipofsarsaparilla.SipOfSarsaparilla.registerBlockWithItem
 import com.ssblur.sipofsarsaparilla.item.SipItems
+import com.ssblur.unfocused.extension.BlockExtension.renderType
 import com.ssblur.unfocused.tab.CreativeTabs.tab
+import net.fabricmc.api.EnvType
+import net.fabricmc.api.Environment
+import net.minecraft.client.renderer.RenderType
 import net.minecraft.core.BlockPos
 import net.minecraft.core.Direction
 import net.minecraft.world.level.BlockGetter
+import net.minecraft.world.level.block.Block
 import net.minecraft.world.level.block.Blocks
 import net.minecraft.world.level.block.LeavesBlock
 import net.minecraft.world.level.block.RotatedPillarBlock
@@ -35,7 +40,7 @@ object SipBlocks {
     SassafrasSapling(ofFullCopy(Blocks.SPRUCE_SAPLING))
   }
   val SASSAFRAS_LOG = registerBlockWithItem("sassafras_log") {
-    object: RotatedPillarBlock(ofFullCopy(Blocks.SPRUCE_LOG)) {
+    object: RotatedPillarBlock(ofFullCopy(Blocks.SPRUCE_LOG).noOcclusion()) {
       override fun getShape(
         blockState: BlockState,
         blockGetter: BlockGetter,
@@ -47,6 +52,36 @@ object SipBlocks {
         if(blockState.getValue(AXIS) == Direction.Axis.X)
           return box(0.0, 6.0, 6.0, 16.0, 10.0, 10.0)
         return box(6.0, 0.0, 6.0, 10.0, 16.0, 10.0)
+      }
+
+      init {
+        try { clientInit() } catch (_: NoSuchMethodError) {}
+      }
+
+      @Environment(EnvType.CLIENT)
+      private fun clientInit() {
+        this.renderType(RenderType.translucent())
+      }
+    }
+  }
+  val SASSAFRAS_LOG_BRANCHED = registerBlockWithItem("sassafras_log_branched") {
+    object: Block(ofFullCopy(Blocks.SPRUCE_PLANKS).noOcclusion()) {
+      override fun getShape(
+        blockState: BlockState,
+        blockGetter: BlockGetter,
+        blockPos: BlockPos,
+        collisionContext: CollisionContext
+      ): VoxelShape {
+        return box(6.0, 0.0, 6.0, 10.0, 16.0, 10.0)
+      }
+
+      init {
+        try { clientInit() } catch (_: NoSuchMethodError) {}
+      }
+
+      @Environment(EnvType.CLIENT)
+      private fun clientInit() {
+        this.renderType(RenderType.cutout())
       }
     }
   }
@@ -70,6 +105,7 @@ object SipBlocks {
 
     SASSAFRAS_SAPLING.second.tab(SipItems.TAB)
     SASSAFRAS_LOG.second.tab(SipItems.TAB)
+    SASSAFRAS_LOG_BRANCHED.second.tab(SipItems.TAB)
     SASSAFRAS_LEAVES.second.tab(SipItems.TAB)
   }
 
