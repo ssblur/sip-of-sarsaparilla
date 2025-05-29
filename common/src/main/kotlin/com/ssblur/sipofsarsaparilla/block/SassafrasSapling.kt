@@ -8,11 +8,13 @@ import net.minecraft.core.BlockPos
 import net.minecraft.server.level.ServerLevel
 import net.minecraft.tags.BlockTags
 import net.minecraft.util.RandomSource
+import net.minecraft.world.item.context.BlockPlaceContext
 import net.minecraft.world.level.BlockGetter
 import net.minecraft.world.level.Level
 import net.minecraft.world.level.LevelReader
 import net.minecraft.world.level.block.Block
 import net.minecraft.world.level.block.BonemealableBlock
+import net.minecraft.world.level.block.FarmBlock
 import net.minecraft.world.level.block.LeavesBlock
 import net.minecraft.world.level.block.state.BlockState
 import net.minecraft.world.level.block.state.StateDefinition
@@ -30,6 +32,13 @@ class SassafrasSapling(properties: Properties) : Block(properties.randomTicks())
   init {
     registerDefaultState(defaultBlockState().setValue(STAGE, 0))
     try { clientInit() } catch (_: NoSuchMethodError) {}
+  }
+
+  override fun getStateForPlacement(blockPlaceContext: BlockPlaceContext): BlockState? {
+    val dirt = blockPlaceContext.level.getBlockState(blockPlaceContext.clickedPos.below())
+    if(dirt.`is`(BlockTags.DIRT) || dirt.block is FarmBlock)
+      return super.getStateForPlacement(blockPlaceContext)
+    return null
   }
 
   @Environment(EnvType.CLIENT)

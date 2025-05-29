@@ -60,7 +60,7 @@ object SipBlocks {
 
       @Environment(EnvType.CLIENT)
       private fun clientInit() {
-        this.renderType(RenderType.translucent())
+        this.renderType(RenderType.cutout())
       }
     }
   }
