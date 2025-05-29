@@ -113,12 +113,17 @@ class SassafrasSapling(properties: Properties) : Block(properties.randomTicks())
 
     val leaves = SipBlocks.SASSAFRAS_LEAVES.first.get().defaultBlockState().setValue(LeavesBlock.DISTANCE, 1)
     for(pos in listOf(
+      blockPos.above(height + 2),
       blockPos.above(height + 1),
+      blockPos.above(height + 1).north(),
+      blockPos.above(height + 1).south(),
+      blockPos.above(height + 1).east(),
+      blockPos.above(height + 1).west(),
       blockPos.above(height).north(),
       blockPos.above(height).south(),
       blockPos.above(height).east(),
-      blockPos.above(height).west())
-    )
+      blockPos.above(height).west(),
+    ))
       if(level.getBlockState(pos).`is`(BlockTags.REPLACEABLE_BY_TREES) || level.getBlockState(pos).canBeReplaced())
         level.setBlockAndUpdate(pos, leaves)
   }

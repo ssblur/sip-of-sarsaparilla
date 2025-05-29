@@ -8,9 +8,8 @@ import software.bernie.geckolib.model.DefaultedItemGeoModel
 import software.bernie.geckolib.renderer.specialty.DyeableGeoArmorRenderer
 import software.bernie.geckolib.util.Color
 
-class ArmorRenderer(path: String) : DyeableGeoArmorRenderer<CowboyHat>(
-  DefaultedItemGeoModel(SipOfSarsaparilla.location(path))
-) {
+class ArmorRenderer(path: String):
+  DyeableGeoArmorRenderer<CowboyHat>(DefaultedItemGeoModel(SipOfSarsaparilla.location(path))) {
   override fun isBoneDyeable(bone: GeoBone?): Boolean {
     return bone?.name?.contains("dyeable") ?: false
   }
