@@ -9,7 +9,7 @@ version = "${version}"
 displayName = "Sip Of Sarsaparilla"
 authors = "SSBlur"
 description = '''
-An uninitialized Unfocused mod
+Bringing you a Sip of Sarsaparilla to keep you cool in this hot western sun.
 '''
 logoFile = "icon.png"
 
