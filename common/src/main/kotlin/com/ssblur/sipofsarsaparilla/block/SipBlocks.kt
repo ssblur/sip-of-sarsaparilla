@@ -110,6 +110,10 @@ object SipBlocks {
   }
 
   fun registerClient() {
-
+//    SASSAFRAS_LEAVES.first.registerColor{ blockState, blockAndTintGetter, blockPos, i ->
+//      blockAndTintGetter?.getBlockTint(blockPos!!) { biome: Biome, d: Double, e: Double ->
+//        FoliageColor.get(d, e)
+//      } ?: 0x000000
+//    }
   }
 }
