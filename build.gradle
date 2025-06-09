@@ -94,6 +94,7 @@ subprojects {
         unfocused_version: rootProject.unfocused_version,
         fabric_loader_version: rootProject.fabric_loader_version,
         neoforge_version: rootProject.neoforge_version,
+        gecko_version: rootProject.gecko_version,
       )
     }
   }

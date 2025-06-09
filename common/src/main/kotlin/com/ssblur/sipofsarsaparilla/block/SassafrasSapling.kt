@@ -11,6 +11,7 @@ import net.minecraft.util.RandomSource
 import net.minecraft.world.item.context.BlockPlaceContext
 import net.minecraft.world.level.BlockGetter
 import net.minecraft.world.level.Level
+import net.minecraft.world.level.LevelAccessor
 import net.minecraft.world.level.LevelReader
 import net.minecraft.world.level.block.Block
 import net.minecraft.world.level.block.BonemealableBlock
@@ -27,6 +28,36 @@ class SassafrasSapling(properties: Properties) : Block(properties.randomTicks())
   companion object {
     val STAGE: IntegerProperty = BlockStateProperties.STAGE
     val SHAPE = box(2.0, 0.0, 2.0, 14.0, 12.0, 14.0)
+
+    fun growTree(level: LevelAccessor, blockPos: BlockPos) {
+      val height = level.random.nextInt(2) + 2
+      val log = SipBlocks.SASSAFRAS_LOG.first.get().defaultBlockState()
+      for(i in 0..height) {
+        if(
+          level.getBlockState(blockPos.above(i)).`is`(BlockTags.REPLACEABLE_BY_TREES)
+          || level.getBlockState(blockPos.above(i)).canBeReplaced()
+          || i == 0
+        )
+          level.setBlock(blockPos.above(i), log, 3)
+      }
+      level.setBlock(blockPos.above(height), SipBlocks.SASSAFRAS_LOG_BRANCHED.first.get().defaultBlockState(), 3)
+
+      val leaves = SipBlocks.SASSAFRAS_LEAVES.first.get().defaultBlockState().setValue(LeavesBlock.DISTANCE, 1)
+      for(pos in listOf(
+        blockPos.above(height + 2),
+        blockPos.above(height + 1),
+        blockPos.above(height + 1).north(),
+        blockPos.above(height + 1).south(),
+        blockPos.above(height + 1).east(),
+        blockPos.above(height + 1).west(),
+        blockPos.above(height).north(),
+        blockPos.above(height).south(),
+        blockPos.above(height).east(),
+        blockPos.above(height).west(),
+      ))
+        if(level.getBlockState(pos).`is`(BlockTags.REPLACEABLE_BY_TREES) || level.getBlockState(pos).canBeReplaced())
+          level.setBlock(pos, leaves, 3)
+    }
   }
 
   init {
@@ -96,35 +127,5 @@ class SassafrasSapling(properties: Properties) : Block(properties.randomTicks())
     } else {
       level.setBlockAndUpdate(blockPos, blockState.setValue(STAGE, stage + 1))
     }
-  }
-
-  fun growTree(level: Level, blockPos: BlockPos) {
-    val height = level.random.nextInt(2) + 2
-    val log = SipBlocks.SASSAFRAS_LOG.first.get().defaultBlockState()
-    for(i in 0..height) {
-      if(
-        level.getBlockState(blockPos.above(i)).`is`(BlockTags.REPLACEABLE_BY_TREES)
-        || level.getBlockState(blockPos.above(i)).canBeReplaced()
-        || i == 0
-      )
-        level.setBlockAndUpdate(blockPos.above(i), log)
-    }
-    level.setBlockAndUpdate(blockPos.above(height), SipBlocks.SASSAFRAS_LOG_BRANCHED.first.get().defaultBlockState())
-
-    val leaves = SipBlocks.SASSAFRAS_LEAVES.first.get().defaultBlockState().setValue(LeavesBlock.DISTANCE, 1)
-    for(pos in listOf(
-      blockPos.above(height + 2),
-      blockPos.above(height + 1),
-      blockPos.above(height + 1).north(),
-      blockPos.above(height + 1).south(),
-      blockPos.above(height + 1).east(),
-      blockPos.above(height + 1).west(),
-      blockPos.above(height).north(),
-      blockPos.above(height).south(),
-      blockPos.above(height).east(),
-      blockPos.above(height).west(),
-    ))
-      if(level.getBlockState(pos).`is`(BlockTags.REPLACEABLE_BY_TREES) || level.getBlockState(pos).canBeReplaced())
-        level.setBlockAndUpdate(pos, leaves)
   }
 }

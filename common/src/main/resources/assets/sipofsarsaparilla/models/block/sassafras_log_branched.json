@@ -1,6 +1,5 @@
 {
 	"credit": "Made with Blockbench",
-	"render_type": "translucent",
 	"texture_size": [32, 32],
 	"textures": {
 		"0": "sipofsarsaparilla:block/sassafras_log",

@@ -1,6 +1,7 @@
 package com.ssblur.sipofsarsaparilla
 
 import com.ssblur.sipofsarsaparilla.block.SipBlocks
+import com.ssblur.sipofsarsaparilla.feature.SipFeatures
 import com.ssblur.sipofsarsaparilla.item.SipItems
 import com.ssblur.unfocused.ModInitializer
 import org.slf4j.Logger
@@ -14,6 +15,7 @@ object SipOfSarsaparilla : ModInitializer("sipofsarsaparilla") {
     fun init() {
         SipItems.register()
         SipBlocks.register()
+        SipFeatures.register()
     }
 
     fun clientInit() {
