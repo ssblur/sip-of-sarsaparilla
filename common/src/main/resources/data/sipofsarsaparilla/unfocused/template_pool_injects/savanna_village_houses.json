@@ -1,0 +1,12 @@
+{
+  "pool": "minecraft:village/savanna/houses",
+  "elements": [
+    {
+      "element": {
+        "location": "sipofsarsaparilla:village/savanna/savanna_village_tavern",
+        "projection": "RIGID"
+      },
+      "weight": 9
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "pool": "minecraft:village/desert/houses",
+  "elements": [
+    {
+      "element": {
+        "location": "sipofsarsaparilla:village/desert/desert_village_tavern",
+        "projection": "RIGID"
+      },
+      "weight": 9
+    }
+  ]
+}

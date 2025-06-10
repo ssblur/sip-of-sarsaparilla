@@ -17,6 +17,7 @@ import net.minecraft.world.level.BlockGetter
 import net.minecraft.world.level.Level
 import net.minecraft.world.level.block.Block
 import net.minecraft.world.level.block.Blocks
+import net.minecraft.world.level.block.Rotation
 import net.minecraft.world.level.block.TransparentBlock
 import net.minecraft.world.level.block.state.BlockState
 import net.minecraft.world.level.block.state.StateDefinition
@@ -63,6 +64,13 @@ class SaloonDoor(properties: Properties) : TransparentBlock(properties.noOcclusi
   ) {
     level.setBlock(blockPos.above(), blockState.setValue(HALF, true), 3)
     super.setPlacedBy(level, blockPos, blockState, livingEntity, itemStack)
+  }
+
+  override fun rotate(blockState: BlockState, rotation: Rotation): BlockState? {
+    return blockState.setValue(
+      FACING,
+      rotation.rotate(blockState.getValue(FACING))
+    )
   }
 
   override fun onPlace(blockState: BlockState, level: Level, blockPos: BlockPos, blockState2: BlockState, bl: Boolean) {
