@@ -3,11 +3,14 @@
   "pattern": [
     "- ",
     "--",
-    "- "
+    "-/"
   ],
   "key": {
     "-": {
       "item": "minecraft:cherry_planks"
+    },
+    "/": {
+      "item": "minecraft:stick"
     }
   },
   "result": {

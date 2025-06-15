@@ -3,11 +3,14 @@
   "pattern": [
     "- ",
     "--",
-    "- "
+    "-/"
   ],
   "key": {
     "-": {
       "item": "minecraft:mangrove_planks"
+    },
+    "/": {
+      "item": "minecraft:stick"
     }
   },
   "result": {

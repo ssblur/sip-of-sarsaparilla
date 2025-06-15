@@ -3,11 +3,14 @@
   "pattern": [
     "- ",
     "--",
-    "- "
+    "-/"
   ],
   "key": {
     "-": {
       "item": "minecraft:warped_planks"
+    },
+    "/": {
+      "item": "minecraft:stick"
     }
   },
   "result": {
