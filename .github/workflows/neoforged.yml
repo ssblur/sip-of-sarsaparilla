@@ -27,14 +27,14 @@ jobs:
           GITHUB_USER: 'ssblur'
       - name: Cleanup
         run: |
-          rm */build/libs/sipofsarsaparilla-*-dev-shadow.jar
+          rm */build/libs/sip_of_sarsaparilla-*-dev-shadow.jar
       - name: Extract Tag Version
         id: tag
         run: echo "version=${GITHUB_REF:11}" >> $GITHUB_OUTPUT
       - name: Deploy
         uses: ssblur/minecraft-publish@v1
         with:
-          mod-file: neoforge/build/libs/sipofsarsaparilla-neoforge-${{ steps.tag.outputs.version }}.jar
+          mod-file: neoforge/build/libs/sip_of_sarsaparilla-neoforge-${{ steps.tag.outputs.version }}.jar
           version-name: "${{ steps.tag.outputs.version }}-neoforge"
           minecraft-version: |
             [1.21, 1.21.1]
