@@ -27,14 +27,14 @@ jobs:
           GITHUB_USER: 'ssblur'
       - name: Cleanup
         run: |
-          rm */build/libs/alchimiae-*-dev-shadow.jar
+          rm */build/libs/sipofsarsaparilla-*-dev-shadow.jar
       - name: Extract Tag Version
         id: tag
         run: echo "version=${GITHUB_REF:11}" >> $GITHUB_OUTPUT
       - name: Deploy
         uses: ssblur/minecraft-publish@v1
         with:
-          mod-file: fabric/build/libs/alchimiae-fabric-${{ steps.tag.outputs.version }}.jar
+          mod-file: fabric/build/libs/sipofsarsaparilla-fabric-${{ steps.tag.outputs.version }}.jar
           version-name: "${{ steps.tag.outputs.version }}-fabric"
           minecraft-version: |
             [1.21, 1.21.1]
