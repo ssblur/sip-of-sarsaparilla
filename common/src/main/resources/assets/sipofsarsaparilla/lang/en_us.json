@@ -1,7 +1,7 @@
 {
   "itemGroup.sipofsarsaparilla.tab": "Sip of Sarsaparilla",
 
-  "item.sipofsarsaparilla.toy_gun": "Toy Gun",
+  "item.sipofsarsaparilla.popgun": "Popgun",
   "item.sipofsarsaparilla.wild_revolver": "Wild Revolver",
   "item.sipofsarsaparilla.golden_gun": "Golden Gun",
   "item.sipofsarsaparilla.bullet": "Revolver Round",
@@ -30,5 +30,8 @@
   "block.sipofsarsaparilla.sassafras_leaves": "Sassafras Leaves",
 
   "gamerule.sipofsarsaparilla:wild_wasteland": "[SoS] Wild Wasteland Enabled",
-  "gamerule.sipofsarsaparilla:mercy": "[SoS] Mercy Rule Enabled"
+  "gamerule.sipofsarsaparilla:mercy": "[SoS] Mercy Rule Enabled",
+
+  "death.attack.gun": "%s was shot cold.",
+  "death.attack.player.gun": "%1$s was shot cold by %2$s."
 }

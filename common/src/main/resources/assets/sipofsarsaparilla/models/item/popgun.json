@@ -76,6 +76,38 @@
 			}
 		}
 	],
+	"display": {
+		"thirdperson_righthand": {
+			"rotation": [0, 90, 0],
+			"translation": [0, 5, -2.25]
+		},
+		"thirdperson_lefthand": {
+			"rotation": [0, -90, 0],
+			"translation": [0, 5, -2.25]
+		},
+		"firstperson_righthand": {
+			"rotation": [0, 90, 0],
+			"translation": [0, 5.75, 0]
+		},
+		"firstperson_lefthand": {
+			"rotation": [0, -90, 0],
+			"translation": [0, 5.75, 0]
+		},
+		"ground": {
+			"translation": [0, 2, 0]
+		},
+		"gui": {
+			"rotation": [30, 30, 0],
+			"translation": [0, 3.5, 0]
+		},
+		"head": {
+			"rotation": [0, 90, 0],
+			"translation": [0, 13.25, 0]
+		},
+		"fixed": {
+			"translation": [0, 4.25, 0]
+		}
+	},
 	"groups": [
 		{
 			"name": "gun",

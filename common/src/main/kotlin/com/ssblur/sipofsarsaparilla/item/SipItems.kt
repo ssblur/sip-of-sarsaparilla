@@ -5,6 +5,7 @@ import com.ssblur.sipofsarsaparilla.SipOfSarsaparilla.registerItem
 import com.ssblur.sipofsarsaparilla.item.armor.CowboyHat
 import com.ssblur.sipofsarsaparilla.item.armor.SipMaterials
 import com.ssblur.sipofsarsaparilla.item.armor.TheDimmadome
+import com.ssblur.sipofsarsaparilla.sound.SipSounds
 import com.ssblur.unfocused.helper.ColorHelper
 import com.ssblur.unfocused.helper.ColorHelper.registerColor
 import com.ssblur.unfocused.tab.CreativeTabs.add
@@ -50,6 +51,24 @@ object SipItems {
         }
       }
   }
+
+  val BULLET = registerItem("bullet") {
+    Item(Item.Properties())
+  }.tab(TAB)
+  val POPGUN = registerItem("popgun") {
+    Gun(1, 6, Item.Properties())
+      .withSounds(SipSounds.GUN_CAP_POP.get())
+  }.tab(TAB)
+  val WILD_REVOLVER = registerItem("wild_revolver") {
+    Gun(8, 6, Item.Properties())
+      .withSounds(SipSounds.GUN_BLAST.get())
+      .withAmmo(BULLET)
+  }.tab(TAB)
+  val GOLDEN_GUN = registerItem("golden_gun") {
+    Gun(20, 6, Item.Properties())
+      .withSounds(SipSounds.GUN_BLAST.get())
+      .withAmmo(BULLET)
+  }.tab(TAB)
 
   fun register() {
     SipMaterials.register()
