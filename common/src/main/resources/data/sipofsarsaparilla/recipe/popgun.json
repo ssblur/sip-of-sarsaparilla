@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "nno",
+    "wn ",
+    "w  "
+  ],
+  "key": {
+    "w": {
+      "tag": "minecraft:planks"
+    },
+    "n": {
+      "item": "minecraft:iron_nugget"
+    },
+    "o": {
+      "item": "minecraft:orange_dye"
+    }
+  },
+  "result": {
+    "id": "sipofsarsaparilla:popgun",
+    "count": 1
+  }
+}

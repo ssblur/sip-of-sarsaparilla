@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "fii",
+    "wi ",
+    "w  "
+  ],
+  "key": {
+    "w": {
+      "tag": "minecraft:planks"
+    },
+    "i": {
+      "item": "minecraft:iron_ingot"
+    },
+    "f": {
+      "item": "minecraft:flint"
+    }
+  },
+  "result": {
+    "id": "sipofsarsaparilla:wild_revolver",
+    "count": 1
+  }
+}

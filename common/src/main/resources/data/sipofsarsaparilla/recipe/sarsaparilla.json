@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:potion"
+    },
+    {
+      "item": "minecraft:sweet_berries"
+    },
+    {
+      "item": "sipofsarsaparilla:sassafras_log"
+    }
+  ],
+  "result": {
+    "id": "sipofsarsaparilla:sarsaparilla",
+    "count": 1
+  }
+}

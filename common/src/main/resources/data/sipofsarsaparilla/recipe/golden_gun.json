@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " a ",
+    "gwg",
+    " g "
+  ],
+  "key": {
+    "a": {
+      "item": "minecraft:enchanted_golden_apple"
+    },
+    "g": {
+      "item": "minecraft:gold_ingot"
+    },
+    "w": {
+      "item": "sipofsarsaparilla:wild_revolver"
+    }
+  },
+  "result": {
+    "id": "sipofsarsaparilla:golden_gun",
+    "count": 1
+  }
+}

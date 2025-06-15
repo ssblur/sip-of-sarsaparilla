@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "n--",
+    "---"
+  ],
+  "key": {
+    "-": {
+      "item": "minecraft:leather"
+    },
+    "n": {
+      "item": "minecraft:gold_nugget"
+    }
+  },
+  "result": {
+    "id": "sipofsarsaparilla:cowboy_hat",
+    "count": 1
+  }
+}

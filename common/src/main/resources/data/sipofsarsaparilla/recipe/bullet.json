@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "--n"
+  ],
+  "key": {
+    "-": {
+      "item": "minecraft:iron_ingot"
+    },
+    "n": {
+      "item": "minecraft:gold_nugget"
+    }
+  },
+  "result": {
+    "id": "sipofsarsaparilla:bullet",
+    "count": 6
+  }
+}
