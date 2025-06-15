@@ -6,6 +6,7 @@ import com.ssblur.sipofsarsaparilla.item.SipItems
 import com.ssblur.sipofsarsaparilla.network.client.SipNetworkS2C
 import com.ssblur.sipofsarsaparilla.network.server.SipNetworkC2S
 import com.ssblur.sipofsarsaparilla.sound.SipSounds
+import com.ssblur.sipofsarsaparilla.trades.SipTrades
 import com.ssblur.unfocused.ModInitializer
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
@@ -22,6 +23,7 @@ object SipOfSarsaparilla : ModInitializer("sipofsarsaparilla") {
         SipSounds.register()
         SipNetworkC2S.register()
         SipNetworkS2C.register()
+        SipTrades.register()
     }
 
     fun clientInit() {
