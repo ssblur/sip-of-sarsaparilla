@@ -19,6 +19,7 @@ import kotlin.math.roundToInt
 class Gun(val damage: Int, val ammo: Int, properties: Properties) : Item(properties) {
   var sounds: List<SoundEvent> = listOf()
   var ammoPredicate: Predicate<ItemStack>? = null
+  var ammoCount = 6
 
   fun withSounds(vararg sounds: SoundEvent): Gun {
     this.sounds = sounds.toList()
@@ -32,10 +33,15 @@ class Gun(val damage: Int, val ammo: Int, properties: Properties) : Item(propert
     return this
   }
 
+  fun withAmmoCount(ammoCount: Int): Gun {
+    this.ammoCount = ammoCount
+    return this
+  }
+
   fun reload(level: Level, player: Player, item: ItemStack) {
     val ammo = item[DataComponents.DAMAGE] ?: 0
     if(ammoPredicate == null) {
-      item[DataComponents.DAMAGE] = 6
+      item[DataComponents.DAMAGE] = ammoCount
     } else {
       val match = player.inventory.items.firstOrNull { ammoPredicate!!.test(it) }
       if(match == null) {
@@ -43,7 +49,7 @@ class Gun(val damage: Int, val ammo: Int, properties: Properties) : Item(propert
         level.playSound(null, player.blockPosition().above(), SipSounds.NO_AMMO_CLICK.get(), SoundSource.PLAYERS)
         return
       }
-      val available = min(6 - ammo, match.count)
+      val available = min(ammoCount - ammo, match.count)
       item[DataComponents.DAMAGE] = available + ammo
       match.shrink(available)
     }

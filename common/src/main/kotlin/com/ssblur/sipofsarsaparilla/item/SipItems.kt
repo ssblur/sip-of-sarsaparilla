@@ -68,6 +68,7 @@ object SipItems {
     Gun(20, 6, Item.Properties())
       .withSounds(SipSounds.GUN_BLAST.get())
       .withAmmo(BULLET)
+      .withAmmoCount(1)
   }.tab(TAB)
 
   fun register() {
