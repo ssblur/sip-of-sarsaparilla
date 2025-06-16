@@ -1,6 +1,8 @@
 package com.ssblur.sipofsarsaparilla.block
 
 import com.ssblur.unfocused.extension.BlockExtension.renderType
+import net.fabricmc.api.EnvType
+import net.fabricmc.api.Environment
 import net.minecraft.client.renderer.RenderType
 import net.minecraft.core.BlockPos
 import net.minecraft.core.Direction
@@ -46,6 +48,7 @@ class SaloonDoor(properties: Properties) : TransparentBlock(properties.noOcclusi
     try { clientInit() } catch (_: NoSuchMethodError) {}
   }
 
+  @Environment(EnvType.CLIENT)
   fun clientInit() {
     this.renderType(RenderType.cutout())
   }
