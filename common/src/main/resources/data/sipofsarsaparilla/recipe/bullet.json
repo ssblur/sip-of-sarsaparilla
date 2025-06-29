@@ -1,14 +1,17 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    "--n"
+    "cgi"
   ],
   "key": {
-    "-": {
-      "item": "minecraft:iron_ingot"
+    "c": {
+      "item": "minecraft:copper_ingot"
     },
-    "n": {
-      "item": "minecraft:gold_nugget"
+    "g": {
+      "item": "minecraft:gunpowder"
+    },
+    "i": {
+      "item": "minecraft:iron_ingot"
     }
   },
   "result": {
